@@ -1,6 +1,7 @@
-#include <application.h>
-#include <api-rest/apirest.h>
+#include <sys/signal.h>
 
+#include "fcgiapplication.h"
+#include "api-rest/apirest.h"
 #include "indexcontroller.h"
 #include "companiesresource.h"
 #include "employeesresource.h"
@@ -8,9 +9,22 @@
 using namespace Hetach;
 using namespace Hetach::HttpKernel;
 
+Application *app;
+
+void unixSignalHandler(int)
+{
+    app->quit();
+
+    exit(0);
+}
+
 int main()
 {
-    Application *app = new Application();
+    signal(SIGINT, unixSignalHandler);
+    signal(SIGTERM, unixSignalHandler);
+    signal(SIGTSTP, unixSignalHandler);
+
+    app = new Application();
 
     Controller *controller = new IndexController();
 
@@ -24,7 +38,7 @@ int main()
     rest->addResource(companies);
     rest->addResource(companies, employees);
 
-    app->run();
+    app->boot();
 
     return 0;
 }

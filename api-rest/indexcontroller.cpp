@@ -1,5 +1,5 @@
 #include <string>
-
+#include <iostream>
 #include "indexcontroller.h"
 
 using namespace std;
@@ -10,9 +10,12 @@ IndexController::IndexController()
 
 }
 
-Hetach::HttpKernel::Response* IndexController::doGet()
+void IndexController::doGet()
 {
     this->response()->setContent("Index controller");
+}
 
-    return this->response();
+void IndexController::doPost(string content)
+{
+    this->response()->setContent(content);
 }

@@ -1,5 +1,3 @@
-#include <regex>
-
 #include "employeeentity.h"
 
 using namespace std;
@@ -18,10 +16,9 @@ string EmployeeEntity::toJson()
         }
     )";
 
-    regex reg("\\{id\\}");
-    string r = to_string(this->m_id);
+    string id = to_string(this->m_id);
 
-    json = regex_replace(json, reg, r);
+    json.replace(json.find("{id}"), sizeof("{id}") - 1, id);
 
     return json;
 }
