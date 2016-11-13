@@ -1,6 +1,7 @@
 #include <sys/signal.h>
 
-#include "fcgiapplication.h"
+#include "application.h"
+#include "server/webserver.h"
 #include "api-rest/apirest.h"
 #include "indexcontroller.h"
 #include "companiesresource.h"
@@ -8,6 +9,7 @@
 
 using namespace Hetach;
 using namespace Hetach::HttpKernel;
+using namespace Hetach::Server;
 
 Application *app;
 
@@ -24,7 +26,7 @@ int main()
     signal(SIGTERM, unixSignalHandler);
     signal(SIGTSTP, unixSignalHandler);
 
-    app = new Application();
+    app = new Application(new WebServer());
 
     Controller *controller = new IndexController();
 

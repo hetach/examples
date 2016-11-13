@@ -1,9 +1,11 @@
-#include "fcgiapplication.h"
+#include "application.h"
+#include "server/webserver.h"
 #include "http-kernel/controller.h"
 #include "http/response.h"
 
 using namespace Hetach;
 using namespace Hetach::HttpKernel;
+using namespace Hetach::Server;
 
 class IndexController: public Controller
 {
@@ -15,7 +17,7 @@ class IndexController: public Controller
 
 int main()
 {
-    FCGIApplication *app = new FCGIApplication();
+    Application *app = new Application(new WebServer());
 
     Controller *controller = new IndexController();
 
