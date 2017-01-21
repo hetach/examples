@@ -23,7 +23,5 @@ int main()
 
     app->route("/index", controller);
 
-    app->boot();
-
-    return 0;
+    return app->exec();
 }

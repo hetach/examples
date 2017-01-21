@@ -40,7 +40,5 @@ int main()
     rest->addResource(companies);
     rest->addResource(companies, employees);
 
-    app->boot();
-
-    return 0;
+    return app->exec();
 }
