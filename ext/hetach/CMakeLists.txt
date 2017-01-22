@@ -12,7 +12,7 @@ if(DEV AND HETACH_DIR)
 else(DEV AND HETACH_DIR)
     ExternalProject_Add(hetach
         GIT_REPOSITORY https://github.com/hetach/hetach.git
-        GIT_TAG develop
+        GIT_TAG master
         PREFIX ${CMAKE_CURRENT_BINARY_DIR}
         INSTALL_COMMAND ""
     )
