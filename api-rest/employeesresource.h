@@ -2,9 +2,9 @@
 #define EMPLOYEESRESOURCE_H
 
 #include <string>
-#include <api-rest/resource.h>
-#include <api-rest/entity.h>
-#include <api-rest/entitycollection.h>
+#include <hetach/api-rest/resource.h>
+#include <hetach/api-rest/entity.h>
+#include <hetach/api-rest/entitycollection.h>
 
 class EmployeesResource : public Hetach::ApiRest::Resource
 {

@@ -1,8 +1,8 @@
 #include <sys/signal.h>
 
-#include "application.h"
-#include "server/webserver.h"
-#include "api-rest/apirest.h"
+#include "hetach/application.h"
+#include "hetach/server/webserver.h"
+#include "hetach/api-rest/apirest.h"
 #include "indexcontroller.h"
 #include "companiesresource.h"
 #include "employeesresource.h"

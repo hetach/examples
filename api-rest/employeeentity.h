@@ -2,7 +2,7 @@
 #define EMPLOYEEENTITY_H
 
 #include <string>
-#include <api-rest/entity.h>
+#include <hetach/api-rest/entity.h>
 
 class EmployeeEntity: public Hetach::ApiRest::Entity
 {

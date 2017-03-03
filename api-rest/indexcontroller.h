@@ -2,9 +2,9 @@
 #define INDEXCONTROLLER_H
 
 #include <string>
-#include <http-kernel/controller.h>
-#include <http/request.h>
-#include <http/response.h>
+#include <hetach/http-kernel/controller.h>
+#include <hetach/http/request.h>
+#include <hetach/http/response.h>
 
 class IndexController : public Hetach::HttpKernel::Controller
 {

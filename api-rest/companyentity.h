@@ -2,7 +2,7 @@
 #define COMPANYENTITY_H
 
 #include <string>
-#include <api-rest/entity.h>
+#include <hetach/api-rest/entity.h>
 
 class CompanyEntity: public Hetach::ApiRest::Entity
 {
