@@ -11,9 +11,9 @@ EmployeesResource::EmployeesResource(): Resource()
 
 }
 
-Entity* EmployeesResource::fetch(int id)
+Entity* EmployeesResource::fetch(string id)
 {
-    return new EmployeeEntity(id);
+    return new EmployeeEntity(stoi(id));
 }
 
 Hetach::ApiRest::EntityCollection* EmployeesResource::fetchAll()

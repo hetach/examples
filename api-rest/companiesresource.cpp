@@ -14,15 +14,15 @@ CompaniesResource::CompaniesResource(): Resource()
 
 }
 
-Entity* CompaniesResource::fetch(int id)
+Entity* CompaniesResource::fetch(string id)
 {
-    if(id == 0) {
+    if(id == "0") {
         throw EntityNotFoundException();
-    } else if(id < 0) {
+    } else if(id < "0") {
         throw Exception("Internal server error");
     }
 
-    return new CompanyEntity(id);
+    return new CompanyEntity(stoi(id));
 }
 
 Hetach::ApiRest::EntityCollection* CompaniesResource::fetchAll()

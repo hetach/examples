@@ -13,7 +13,7 @@ public:
 
     std::string name() { return "employees"; }
 
-    Hetach::ApiRest::Entity* fetch(int id);
+    Hetach::ApiRest::Entity* fetch(std::string id);
     Hetach::ApiRest::EntityCollection* fetchAll();
 };
 
